@@ -1,0 +1,35 @@
+Locate the phpMyAdmin Directory:
+Use a file manager to navigate to the mobile-htdocs/phpMyAdmin directory
+
+Copy the Configuration File:
+Find the file named config.example.inc.php
+Copy this file and rename the copied file to config.inc.php
+
+Modify the Configuration File:
+Open the newly created config.inc.php file in a text editor (A-code or vim)
+
+Find the Configuration Section:
+Search for the following lines in the config.inc.php file:
+-->
+$i = 0; 
+$i++; 
+$cfg['Servers'][$i]['auth_type'] = 'cookie'; 
+$cfg['Servers'][$i]['host'] = 'localhost'; 
+$cfg['Servers'][$i]['compress'] = false;
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
+-->
+
+Add the Socket Configuration:
+At the bottom of this section, add the following line:
+$cfg['Servers'][$i]['socket'] = ""; 
+
+Final Result:
+-->
+$i = 0; 
+$i++; 
+$cfg['Servers'][$i]['auth_type'] = 'cookie'; 
+$cfg['Servers'][$i]['host'] = 'localhost'; 
+$cfg['Servers'][$i]['compress'] = false;
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['Servers'][$i]['socket'] = ""; 
+-->

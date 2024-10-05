@@ -1,0 +1,18 @@
+1. Install termux in playstore or in fdroid in chrome
+2. Install A-code in playstore
+
+Dependencies:
+Open Termux and run the following commands. Always type Y if prompted:
+1. > pkg update && pkg upgrade 
+2. > pkg install vim
+3. > pkg install apache2
+4. > pkg install php php-apache
+5. > pkg install unzip
+6. > pkg install git
+7. > pkg install mariadb
+
+how to use vim? 
+Entering Insert Mode: i
+Exiting Insert Mode: Esc
+Saving and Exiting: Esc + :wq
+Exiting Without Saving: Esc + :q!

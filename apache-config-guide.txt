@@ -1,77 +1,30 @@
-1. Install termux in playstore or fdroid in chrome
-2. Install A-code in playstore
+Setup Apache
+Open the Apache Configuration File: Edit the Apache configuration file located at PREFIX/etc/apache2/httpd.conf using Vim. like <vim $PREFIX/etc/apache2/httpd.conf>
 
-Termux-setup:
+Configure ServerName:
+Find the line that says ServerRoot "/data/data/com.termux/files/usr".
+At the bottom of this section, add ServerName localhost.
+Change DocumentRoot:
 
-open termux then run 
-always type Y if asked
-1. > pkg update && pkg upgrade 
-2. > pkg install vim
-3. > pkg install apache2
-4. > pkg install php php-apache
-5. > pkg install unzip
-6. > pkg install git
+Locate the line that says DocumentRoot "/data/data/com.termux/files/usr/var/www/html" and <Directory "/data/data/com.termux/files/usr/var/www/html">.
+Change it to DocumentRoot "/data/data/com.termux/files/home/storage/shared/mobile-htdocs" and <Directory "/data/data/com.termux/files/home/storage/shared/mobile-htdocs">.
+Ensure that the path is correct based on where you have placed your htdocs.
 
-Setup-directory:
-
-> termux-setup-storage 
-accept permission
-> dir explanation-/this to see all file or directory/folder 
-if you see the storage that's mean the termux-setup-storage was succesfull
-> cd explanation-/to change to go to targer directory/folder e.g cd storage 
-> cd storage
-> cd shared
-if you don't have shared use DCIM
-then make folder/directory
-> mkdir htdocs
-if you use shared you can see it in filemanager phonestorage
-
-Setup-apache:
-
-> vim $PREFIX/etc/apache2/httpd.conf
-
-how to use vim? 
-click i if you want to edit the file 
-click Esc if you done editing
-click Esc and type :wq if you want to save and exit to open file using vim
-
-continue to setup:
-Find:
-ServerRoot "/data/data/com.termux/files/usr"
-in bottom add ServerName localhost like this 
-
-ServerRoot "/data/data/com.termux/files/usr"
-ServerName localhost
+Comment and Uncomment Load Modules:
+Find the line LoadModule mpm_event_module libexec/apache2/mod_mpm_event.so and comment it by adding the # at the beginning.
+Then find and uncomment the line #LoadModule mpm_prefork_module libexec/apache2/mod_mpm_prefork.so. by removing the # at the beginning
+After that, add LoadModule php_module libexec/apache2/libphp.so.
 
 
-Find:
-DocumentRoot "/data/data/com.termux/files/usr/var/www/html"
-<Directory "/data/data/com.termux/files/usr/var/www/html">
+Add PHP MIME Type:
+Locate the section that starts with <Directory Mime type>.
+Inside this section, where you find AddType, add AddType application/x-httpd-php .php.
+Save and Quit Vim:
 
-Change it to:
-DocumentRoot "/data/data/com.termux/files/home/storage/shared/htdocs"
-<Directory "/data/data/com.termux/files/home/storage/shared/htdocs">
+To save your changes and exit Vim, press Esc, then type :wq and press Enter.
+Start Apache:
 
-make sure the path was correct on were you put the htdocs 
+In your Termux home directory, run the command to start Apache.
+Access Apache:
 
-
-Find:
-LoadModule mpm_event_module libexec/apache2/mod_mpm_event.so
-Change to:
-LoadModule mpm_prefork_module libexec/apache2/mod_mpm_prefork.so
-after that add this to
-LoadModule php_module libexec/apache2/libphp.so
-
-Find <Directory Mime type>
-inside there are AddType
-Add this:
-AddType application/x-httpd-php .php
-
-then save and quit i put in the the how to save and quit in vim :>
-
-In main home of termux run:
-> apachectl start
-now you can locate it in chrome or any search-engine 
-e.g http://localhost:8080/
-
-
+You can now access your web server in Chrome or any web browser using the URL http://localhost:8080/.

@@ -1,0 +1,35 @@
+Install MariaDB: Ensure you have MariaDB installed. If you haven't done this yet,run: 
+-> pkg install mariadb
+
+Create a Data Directory: Make a directory for MariaDB data: in termux run this following command:
+-> mkdir -p $HOME/mysql_data
+
+Initialize the Database: Set up the MariaDB database with your data directory:
+-> mariadb-install-db --datadir=$HOME/mysql_data &
+
+Start MariaDB: Start the MariaDB server in safe mode, bypassing the grant tables:
+-> mariadb-safe --skip-grant-tables --datadir=$HOME/mysql_data &
+
+Access MariaDB: Open the MariaDB prompt:
+-> mariadb
+
+Create a User: Create a new user (replace <username e.g., root> and your_password with your desired username and password):
+-> CREATE USER '<username e.g., root>'@'localhost' IDENTIFIED BY 'your_password';
+
+Grant Privileges: Grant the user all privileges on the database:
+-> GRANT ALL PRIVILEGES ON *.* TO '<username e.g., root>'@'localhost' WITH GRANT OPTION;
+
+Flush Privileges: Apply the changes:
+FLUSH PRIVILEGES;
+
+Running MariaDB
+To start the MariaDB server later, use:
+-> mariadbd-safe --datadir=$HOME/mysql_data &
+
+Accessing MariaDB
+To access MariaDB with your user:
+-> mysql -u <username e.g., root> -p
+
+
+
+line that have this '->' was all the command :>
