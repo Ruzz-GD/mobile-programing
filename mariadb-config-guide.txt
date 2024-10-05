@@ -32,4 +32,4 @@ To access MariaDB with your user:
 
 
 
-line that have this '->' was all the command :>
+line that have this '->' was all command :>
