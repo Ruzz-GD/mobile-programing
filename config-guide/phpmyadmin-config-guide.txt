@@ -1,3 +1,7 @@
+make sure you already unzip the phpMyAdmim.zip you can use termux or ZArchiver file-manager
+using termux you just need to go in mobile-htdocs directory like cd ~/storage/shared/mobile-htdocs 
+then command > unzip phpMyAdmin.zip 
+
 Locate the phpMyAdmin Directory:
 Use a file manager to navigate to the mobile-htdocs/phpMyAdmin directory
 
