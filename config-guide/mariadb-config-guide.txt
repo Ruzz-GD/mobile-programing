@@ -20,7 +20,7 @@ Grant Privileges: Grant the user all privileges on the database:
 -> GRANT ALL PRIVILEGES ON *.* TO '<username e.g., root>'@'localhost' WITH GRANT OPTION;
 
 Flush Privileges: Apply the changes:
-FLUSH PRIVILEGES;
+-> FLUSH PRIVILEGES;
 
 Running MariaDB
 To start the MariaDB server later, use:

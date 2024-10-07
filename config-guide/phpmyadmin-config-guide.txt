@@ -3,7 +3,7 @@ using termux you just need to go in mobile-htdocs directory like cd ~/storage/sh
 then command > unzip phpMyAdmin.zip 
 
 Locate the phpMyAdmin Directory:
-Use a file manager to navigate to the mobile-htdocs/phpMyAdmin directory
+Use a A-code to navigate to the mobile-htdocs/phpMyAdmin directory
 
 Copy the Configuration File:
 Find the file named config.example.inc.php

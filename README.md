@@ -11,7 +11,7 @@ termux-setup-storage
 git clone https://github.com/Ruzz-GD/mobile-htdocs.git ~/storage/shared/mobile-htdocs
 ```
 ## View Configuration Files and Setup Instructions:
-### To ensure everything is configured correctly, you can find additional setup instructions and configuration details in the .txt files provided within the repository. These files contain important information to help you:
+### To ensure everything is configured correctly, you can find additional setup instructions and configuration details in the config-guide/*files provided within the repository. These files contain important information to help you:
 -first-setup-and-required-packages.txt
 -apache-config-guide.txt
 -mariadb-config-guide.txt
