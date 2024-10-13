@@ -1,30 +1,48 @@
 Setup Apache
-Open the Apache Configuration File: Edit the Apache configuration file located at PREFIX/etc/apache2/httpd.conf using Vim. like <vim $PREFIX/etc/apache2/httpd.conf>
+Open the Apache Configuration File: Edit the Apache configuration file located at.
+PREFIX/etc/apache2/httpd.conf using Vim
+like:
+-> vim $PREFIX/etc/apache2/httpd.conf
 
 Configure ServerName:
-Find the line that says ServerRoot "/data/data/com.termux/files/usr".
-At the bottom of this section, add ServerName localhost.
+Find the line that says 
+ServerRoot "/data/data/com.termux/files/usr"
+At the bottom of this section, add
+-> ServerName localhost
 
 Change DocumentRoot:
-Locate the line that says DocumentRoot "/data/data/com.termux/files/usr/var/www/html" and <Directory "/data/data/com.termux/files/usr/var/www/html">.
+Locate the line that says 
+DocumentRoot "/data/data/com.termux/files/usr/var/www/html" 
+and 
+<Directory "/data/data/com.termux/files/usr/var/www/html">
 
-Change it to DocumentRoot "/data/data/com.termux/files/home/storage/shared/mobile-htdocs" and <Directory "/data/data/com.termux/files/home/storage/shared/mobile-htdocs">.
+Change it to 
+-> DocumentRoot "/data/data/com.termux/files/home/storage/shared/mobile-htdocs" 
+and 
+-> <Directory "/data/data/com.termux/files/home/storage/shared/mobile-htdocs">
 Ensure that the path is correct based on where you have placed your htdocs.
 
-Comment and Uncomment Load Modules:
-Find the line LoadModule mpm_event_module libexec/apache2/mod_mpm_event.so and comment it by adding the # at the beginning.
-Then find and uncomment the line #LoadModule mpm_prefork_module libexec/apache2/mod_mpm_prefork.so. by removing the # at the beginning
-After that, add LoadModule php_module libexec/apache2/libphp.so.
+
+Find the line LoadModule and comment it by adding the # at the beginning:
+-> mpm_event_module libexec/apache2/mod_mpm_event.so 
+
+Find and uncomment the line by removing the # at the beginning:
+-> #LoadModule mpm_prefork_module libexec/apache2/mod_mpm_prefork.so
+
+Add this near to any LoadModule:
+-> LoadModule php_module libexec/apache2/libphp.so
 
 Add PHP MIME Type:
-Locate the section that starts with <Directory Mime type>.
-Inside this section, where you find AddType, add AddType application/x-httpd-php .php.
+Locate the section that starts with <Directory Mime type>
+Inside this section, where you find AddType add this: 
+-> AddType application/x-httpd-php .php
+
 Save and Quit Vim:
-
 To save your changes and exit Vim, press Esc, then type :wq and press Enter.
+
 Start Apache:
-
 In your Termux home directory, run the command to start Apache.
-Access Apache:
+-> apachectl start
 
+Access Apache:
 You can now access your web server in Chrome or any web browser using the URL http://localhost:8080/.

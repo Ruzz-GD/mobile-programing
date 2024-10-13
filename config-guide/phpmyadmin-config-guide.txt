@@ -1,6 +1,8 @@
 make sure you already unzip the phpMyAdmim.zip you can use termux or ZArchiver file-manager
-using termux you just need to go in mobile-htdocs directory like cd ~/storage/shared/mobile-htdocs 
-then command > unzip phpMyAdmin.zip 
+using termux you just need to go in mobile-htdocs directory like 
+-> cd ~/storage/shared/mobile-htdocs 
+then command 
+-> unzip phpMyAdmin.zip 
 
 Locate the phpMyAdmin Directory:
 Use a A-code to navigate to the mobile-htdocs/phpMyAdmin directory
@@ -25,7 +27,7 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
 Add the Socket Configuration:
 At the bottom of this section, add the following line:
-$cfg['Servers'][$i]['socket'] = "/data/data/com.termux/files/usr/var/run/mysqld.sock"; 
+-> $cfg['Servers'][$i]['socket'] = "/data/data/com.termux/files/usr/var/run/mysqld.sock"; 
 
 Final Result:
 -->

@@ -1,4 +1,6 @@
 here in /mobile-htdocs
-once you run the apache and mariadb you can acces all your code file in any search engine using "http://localhost:8080/mobile-htdocs/"nameOfFolderwhereYouputAllyourCode<e.g php-example/index.php or index.html or any"
+once you run the apache and mariadb you can acces all your code file in any search engine using "http://localhost:8080/"nameOfFolderwhereYouputAllyourCode<e.g php-example/index.php or index.html or any"
 
 but before you read this focus on configuration first
+
+HAPPY CODING FROM ME ;)

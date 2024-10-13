@@ -1,4 +1,4 @@
-## User Guide for Mobile Htdocs Setup by ruzz-gd
+## User Guide for Mobile Htdocs Setup
 ### This guide will help you set up and run a local web server on your mobile device using Termux. This setup mimics the traditional XAMPP htdocs folder, allowing you to develop websites directly from your phone.
 
 ## Clone into Shared Storage:
