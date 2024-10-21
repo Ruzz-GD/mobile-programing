@@ -39,3 +39,7 @@ $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 $cfg['Servers'][$i]['socket'] = "/data/data/com.termux/files/usr/var/run/mysqld.sock"; 
 -->
+
+
+if you dont have user password in mariadb like the setup in this config guide about mariadb 
+make the AllowNoPassword true

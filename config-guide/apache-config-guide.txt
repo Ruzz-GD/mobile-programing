@@ -10,6 +10,17 @@ ServerRoot "/data/data/com.termux/files/usr"
 At the bottom of this section, add
 -> ServerName localhost
 
+Find and uncomment the line by removing the # at the beginning:
+-> #LoadModule mpm_prefork_module libexec/apache2/mod_mpm_prefork.so
+result-> LoadModule mpm_prefork_module libexec/apache2/mod_mpm_prefork.so
+
+Find and comment the line by adding # at the beginning:
+-> LoadModule mpm_worker_module libexec/apache2/mod_mpm_worker.so
+result-> #LoadModule mpm_worker_module libexec/apache2/mod_mpm_worker.so
+
+Add this to bottom of LoadModule mpm_prefork_module:
+-> LoadModule php_module libexec/apache2/libphp.so
+
 Change DocumentRoot:
 Locate the line that says 
 DocumentRoot "/data/data/com.termux/files/usr/var/www/html" 
@@ -21,16 +32,6 @@ Change it to
 and 
 -> <Directory "/data/data/com.termux/files/home/storage/shared/mobile-htdocs">
 Ensure that the path is correct based on where you have placed your htdocs.
-
-
-Find the line LoadModule and comment it by adding the # at the beginning:
--> mpm_event_module libexec/apache2/mod_mpm_event.so 
-
-Find and uncomment the line by removing the # at the beginning:
--> #LoadModule mpm_prefork_module libexec/apache2/mod_mpm_prefork.so
-
-Add this near to any LoadModule:
--> LoadModule php_module libexec/apache2/libphp.so
 
 Add PHP MIME Type:
 Locate the section that starts with <Directory Mime type>

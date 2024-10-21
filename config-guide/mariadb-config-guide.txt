@@ -2,61 +2,13 @@ Install MariaDB:
 Ensure you have MariaDB installed. If you haven't done this yet, run the following command:
 -> pkg install mariadb
 
-
-Create a directory for the MariaDB data. In Termux, run the following command:
--> mkdir -p $HOME/mysql_data
-
-
-Set up the MariaDB database with your data directory:
--> mariadb-install-db --datadir=$HOME/mysql_data &
-
-
-Start the MariaDB server in safe mode, bypassing the grant tables:
--> mariadbd-safe --skip-grant-tables --datadir=$HOME/mysql_data &
-
-
-Access MariaDB:
-Open the MariaDB prompt:
--> mariadb
-
-
-Create a new user. Here, root is the username and 1234 is the password, but you can change them to whatever you want:
--> CREATE USER 'root'@'localhost' IDENTIFIED BY '1234';
-
-
-Grant the user all privileges on the database. If you are not using the root username, change 'root' to your desired username:
--> GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
-
-
-Apply the changes:
--> FLUSH PRIVILEGES;
-
-
 Running MariaDB:
 To start the MariaDB server later, use:
--> mariadbd-safe --datadir=$HOME/mysql_data &
-
-
-Accessing MariaDB:
-To access MariaDB with your user, run:
+-> mysqld_safe &
 -> mysql -u root -p
 
+if ask the password just enter it
 
-All commands are preceded by ->, indicating what needs to be run in the terminal.
 
 
-Extra:
-If you encounter an error during your MariaDB setup, you can reinstall it by following these steps in your Termux home directory:
-
-1. Uninstall MariaDB:
--> pkg uninstall mariadb
-
-2. Remove the MariaDB data and configuration directories:
--> rm -rf $PREFIX/var/lib/mysql
--> rm -rf $PREFIX/etc/mysql
-
-3. Install MariaDB again:
--> pkg install mariadb
-
-Make sure to follow the configuration carefully to avoid any errors.
 
